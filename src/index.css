@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --brand-forest: #386641;
+  --brand-leaf: #6A994E;
+  --brand-accent: #A7C957;
+  --brand-cream: #F2E8CF;
+  --brand-charcoal: #161A17;
+}
+
+html {
+  scroll-behavior: auto; /* Managed by Lenis */
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color: #222623;
+  background-color: #F2E8CF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.font-serif {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #EFE5CC;
+}
+::-webkit-scrollbar-thumb {
+  background: #386641;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #284c30;
+}

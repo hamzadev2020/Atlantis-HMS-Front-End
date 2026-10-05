@@ -1,0 +1,129 @@
+.housekeeping-app {
+  --hk-ink: #24362f;
+  --hk-muted: #718078;
+  --hk-green: #1f573f;
+  --hk-lime: #d8f26a;
+  min-height: 100vh;
+  background: #f4f6f2;
+  color: var(--hk-ink);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+.housekeeping-topbar { position: sticky; top: 0; z-index: 30; display: flex; height: 76px; align-items: center; justify-content: space-between; border-bottom: 1px solid #e0e7df; background: rgba(255,255,255,.9); padding: 0 clamp(14px, 3vw, 32px); box-shadow: 0 8px 30px rgba(25,66,45,.07); backdrop-filter: blur(16px); }
+.housekeeping-brand { display: flex; align-items: center; gap: 12px; }
+.housekeeping-brand-logo { display: grid; width: 52px; aspect-ratio: 1; place-items: center; border: 1px solid #e0e7df; border-radius: 16px; background: linear-gradient(135deg,#eff6ef,#fff); padding: 4px; }
+.housekeeping-brand-logo img { width: 100%; height: 100%; object-fit: contain; }
+.housekeeping-brand div { display: grid; gap: 3px; }
+.housekeeping-brand strong { font-size: 11px; letter-spacing: 1.3px; }
+.housekeeping-brand small { color: var(--hk-muted); font-size: 8px; letter-spacing: 1.2px; }
+.housekeeping-header-actions { display: flex; align-items: center; gap: 9px; }
+.housekeeping-refresh { display: grid; width: 40px; aspect-ratio: 1; place-items: center; border: 1px solid #dce5dc; border-radius: 13px; background: white; color: var(--hk-green); cursor: pointer; box-shadow: 0 2px 7px rgba(30,60,42,.05); transition: .18s ease; }
+.housekeeping-refresh:hover { transform: translateY(-1px); border-color: var(--hk-green); background: var(--hk-green); color: white; }
+.housekeeping-logout { display: grid; width: 40px; aspect-ratio: 1; place-items: center; border: 1px solid #ead9d6; border-radius: 13px; background: white; color: #873d35; cursor: pointer; transition: .18s ease; }
+.housekeeping-logout:hover { transform: translateY(-1px); border-color: #873d35; background: #873d35; color: white; }
+.housekeeping-main { width: 100%; margin: 0; padding: 34px clamp(14px, 2vw, 32px) 60px; }
+.housekeeping-welcome { position: relative; display: flex; min-height: 226px; align-items: center; justify-content: space-between; overflow: hidden; background: var(--hk-green); padding: 28px clamp(22px, 4vw, 40px); color: white; }
+.housekeeping-kicker { display: inline-flex; align-items: center; gap: 6px; color: #557465; font-size: 9px; font-weight: 800; letter-spacing: 1.2px; }
+.housekeeping-welcome .housekeeping-kicker { color: var(--hk-lime); }
+.housekeeping-welcome h1 { margin: 14px 0 9px; font-family: Georgia, serif; font-size: clamp(36px, 5vw, 48px); font-weight: 400; line-height: 1; }
+.housekeeping-welcome h1 em { color: var(--hk-lime); font-weight: 400; }
+.housekeeping-welcome p { max-width: 350px; margin: 0; color: #d8e5dd; font-size: 12px; line-height: 1.65; }
+.housekeeping-welcome-art { display: grid; width: 140px; aspect-ratio: 1; place-items: center; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; color: var(--hk-lime); }
+.housekeeping-alert { display: flex; align-items: center; gap: 8px; margin-top: 14px; border-left: 3px solid #b54239; background: #fff0ed; padding: 11px 14px; color: #813229; font-size: 12px; }
+.housekeeping-alert.success { border-color: #4c8b64; background: #e9f5eb; color: #28583a; }
+.housekeeping-counts { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 11px; margin-top: 14px; }
+.housekeeping-counts article { display: grid; gap: 7px; border: 1px solid #e0e7df; background: white; padding: 15px 18px; }
+.housekeeping-counts article span { color: var(--hk-muted); font-size: 9px; font-weight: 800; letter-spacing: 1px; }
+.housekeeping-counts article strong { color: var(--hk-green); font-family: Georgia, serif; font-size: 29px; font-weight: 400; }
+.housekeeping-counts article small { color: var(--hk-muted); font-size: 9px; }
+.housekeeping-analytics { display: grid; grid-template-columns: minmax(170px,.8fr) minmax(180px,1.2fr) minmax(190px,.9fr); align-items: center; gap: 22px; margin-top: 11px; border: 1px solid #e0e7df; background: #fff; padding: 17px 19px; }
+.housekeeping-analytics-copy h2 { margin: 5px 0 3px; color: var(--hk-ink); font-family: Georgia,serif; font-size: 20px; font-weight: 400; }
+.housekeeping-analytics-copy p { margin: 0; color: var(--hk-muted); font-size: 10px; }
+.housekeeping-completion-label { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; color: #52645a; font-size: 10px; }
+.housekeeping-completion-label strong { color: var(--hk-green); font-family: Georgia,serif; font-size: 19px; font-weight: 400; }
+.housekeeping-progress-track { height: 8px; overflow: hidden; background: #edf1eb; }
+.housekeeping-progress-track span { display: block; height: 100%; background: linear-gradient(90deg,#1f573f,#a4c567); transition: width .3s ease; }
+.housekeeping-category-analytics { display: grid; gap: 8px; border-left: 1px solid #e8ede7; padding-left: 18px; }
+.housekeeping-category-analytics > div { display: flex; align-items: center; gap: 8px; color: #52645a; font-size: 10px; }
+.housekeeping-category-analytics strong { margin-left: auto; color: var(--hk-ink); font-size: 12px; }
+.housekeeping-category-dot { width: 8px; height: 8px; background: #a4bf69; }
+.housekeeping-category-dot.maintenance { background: #d89966; }
+.housekeeping-task-section { margin-top: 34px; }
+.housekeeping-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.housekeeping-section-heading h2 { margin: 5px 0 0; font-family: Georgia, serif; font-size: 26px; font-weight: 400; }
+.housekeeping-updated { display: inline-flex; align-items: center; gap: 6px; color: var(--hk-muted); font-size: 10px; }
+.housekeeping-task-filters { display: grid; grid-template-columns: minmax(180px,1fr) auto auto; align-items: center; gap: 9px; margin-bottom: 19px; border: 1px solid #e0e7df; background: white; padding: 10px; }
+.housekeeping-search { display: flex; min-width: 0; align-items: center; gap: 8px; border: 1px solid #dce5dc; background: #fbfcfb; padding: 0 9px; color: #718078; }
+.housekeeping-search input { width: 100%; min-height: 36px; border: 0; outline: 0; background: transparent; color: var(--hk-ink); font: inherit; font-size: 10px; }
+.housekeeping-filter-group { display: flex; flex-wrap: wrap; gap: 4px; }
+.housekeeping-filter-group button { min-height: 34px; border: 1px solid transparent; background: transparent; padding: 0 9px; color: #65756b; cursor: pointer; font: inherit; font-size: 9px; font-weight: 700; }
+.housekeeping-filter-group button:hover { background: #f3f6f1; }
+.housekeeping-filter-group button.is-active { border-color: #dce7da; background: #edf3e9; color: var(--hk-green); }
+.housekeeping-status-filter { display: flex; align-items: center; gap: 6px; color: #52645a; font-size: 9px; font-weight: 700; }
+.housekeeping-status-filter select { min-height: 34px; max-width: 145px; border: 1px solid #dce5dc; background: #fbfcfb; padding: 0 7px; color: var(--hk-ink); font: inherit; font-size: 9px; }
+.housekeeping-task-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 0 0 10px; }
+.housekeeping-task-section-heading h3 { display: flex; align-items: center; gap: 7px; margin: 0; color: #34483c; font-family: Georgia,serif; font-size: 17px; font-weight: 400; }
+.housekeeping-task-section-heading h3 svg { color: var(--hk-green); }
+.housekeeping-task-section-heading > span { color: var(--hk-muted); font-size: 9px; }
+.housekeeping-completed-section { margin-top: 26px; border-top: 1px solid #dfe7dd; padding-top: 19px; }
+.housekeeping-task-list { display: grid; gap: 11px; }
+.housekeeping-task-card { display: grid; grid-template-columns: 44px minmax(0,1fr); gap: 13px; border: 1px solid #e0e7df; border-left: 3px solid #c6d48b; background: white; padding: 17px; }
+.housekeeping-task-card.task-in-progress { border-left-color: #dc996c; }
+.housekeeping-task-card.task-completed { border-left-color: #4f9c68; }
+.housekeeping-task-mark { display: grid; width: 40px; aspect-ratio: 1; place-items: center; background: #edf3e9; color: var(--hk-green); }
+.housekeeping-task-mark.task-type-maintenance { background: #fbefe4; color: #9a5b2e; }
+.housekeeping-task-mark.task-completed-mark { background: #e2f0e4; color: #27603a; }
+.housekeeping-task-content { min-width: 0; }
+.housekeeping-task-title { display: flex; align-items: start; justify-content: space-between; gap: 12px; }
+.housekeeping-task-type { color: #718078; font-size: 8px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+.housekeeping-task-title h3 { margin: 3px 0; font-family: Georgia, serif; font-size: 20px; font-weight: 400; }
+.housekeeping-task-title p { margin: 0; color: var(--hk-muted); font-size: 10px; }
+.housekeeping-status { display: inline-flex; width: fit-content; flex: 0 0 auto; background: #f5efd7; padding: 5px 8px; color: #7a5b27; font-size: 9px; font-weight: 800; }
+.housekeeping-status.status-in-progress { background: #f8e7d8; color: #8f4f24; }
+.housekeeping-status.status-completed { background: #e2f0e4; color: #27603a; }
+.housekeeping-task-notes { margin: 13px 0 0; border-left: 2px solid #dfe7de; padding-left: 9px; color: #52645a; font-size: 10px; line-height: 1.6; }
+.housekeeping-task-controls { display: grid; grid-template-columns: minmax(0,1fr) 140px auto; align-items: end; gap: 9px; margin-top: 14px; }
+.housekeeping-note-input,.housekeeping-status-input { display: grid; min-width: 0; gap: 5px; }
+.housekeeping-note-input span,.housekeeping-status-input span { color: #52645a; font-size: 9px; font-weight: 700; }
+.housekeeping-note-input input,.housekeeping-status-input select { width: 100%; min-height: 36px; border: 1px solid #dce5dc; border-radius: 0; background: #fbfcfb; padding: 0 9px; color: var(--hk-ink); font: inherit; font-size: 10px; }
+.housekeeping-save { min-height: 36px; border: 1px solid var(--hk-green); background: var(--hk-green); padding: 0 11px; color: white; cursor: pointer; font-size: 10px; font-weight: 700; }
+.housekeeping-save:disabled { opacity: .55; cursor: wait; }
+.housekeeping-empty { display: grid; justify-items: center; gap: 9px; border: 1px dashed #cdd8cd; background: white; padding: 36px 18px; color: var(--hk-muted); font-size: 11px; text-align: center; }
+.housekeeping-empty strong { color: var(--hk-ink); font-family: Georgia, serif; font-size: 18px; font-weight: 400; }
+.housekeeping-empty-compact { padding: 21px 14px; }
+@media (max-width: 580px) {
+  .housekeeping-topbar { height: 64px; padding: 0 12px; }
+  .housekeeping-brand { gap: 8px; }
+  .housekeeping-brand-logo { width: 40px; border-radius: 12px; }
+  .housekeeping-brand strong { font-size: 9px; }
+  .housekeeping-brand small { font-size: 8px; }
+  .housekeeping-header-actions { gap: 5px; }
+  .housekeeping-refresh, .housekeeping-logout { width: 34px; border-radius: 11px; }
+  .housekeeping-main { padding: 20px 14px 40px; }
+  .housekeeping-welcome { min-height: 190px; padding: 22px 19px; }
+  .housekeeping-welcome-art { width: 74px; }
+  .housekeeping-welcome-art svg { width: 37px; }
+  .housekeeping-counts { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 7px; }
+  .housekeeping-counts article { padding: 12px 10px; }
+  .housekeeping-counts article span { font-size: 7px; letter-spacing: .6px; }
+  .housekeeping-counts article strong { font-size: 24px; }
+  .housekeeping-analytics { grid-template-columns: 1fr; gap: 13px; padding: 14px; }
+  .housekeeping-category-analytics { grid-template-columns: 1fr 1fr; border-top: 1px solid #e8ede7; border-left: 0; padding: 10px 0 0; }
+  .housekeeping-task-filters { grid-template-columns: 1fr; }
+  .housekeeping-filter-group { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .housekeeping-filter-group button { padding: 0 5px; }
+  .housekeeping-status-filter { justify-content: space-between; }
+  .housekeeping-status-filter select { max-width: none; flex: 1; }
+  .housekeeping-section-heading { align-items: start; flex-direction: column; }
+  .housekeeping-task-card { grid-template-columns: 32px minmax(0,1fr); gap: 10px; padding: 12px; }
+  .housekeeping-task-mark { width: 31px; }
+  .housekeeping-task-mark svg { width: 17px; }
+  .housekeeping-task-title { flex-direction: column; gap: 8px; }
+  .housekeeping-task-controls { grid-template-columns: minmax(0,1fr) 112px; }
+  .housekeeping-save { grid-column: 1/-1; }
+}
+@media (min-width: 581px) and (max-width: 900px) {
+  .housekeeping-analytics { grid-template-columns: 1fr 1fr; }
+  .housekeeping-category-analytics { grid-column: 1/-1; grid-template-columns: 1fr 1fr; border-top: 1px solid #e8ede7; border-left: 0; padding: 10px 0 0; }
+  .housekeeping-task-filters { grid-template-columns: minmax(160px,1fr) auto; }
+  .housekeeping-status-filter { grid-column: 1/-1; justify-content: flex-end; }
+}

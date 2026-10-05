@@ -1,0 +1,173 @@
+.receptionist-request-layout,
+.receptionist-request-layout > main {
+  min-width: 0;
+}
+
+.receptionist-request-mobile-nav {
+  display: none;
+}
+
+.service-request-housekeeping-progress {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin-top: 10px;
+  border-left: 2px solid #d8e4d9;
+  background: #f7faf7;
+  padding: 8px 10px;
+  color: #5e7064;
+  font-size: 10px;
+}
+
+.service-request-housekeeping-progress > span:first-child {
+  color: #354b3d;
+  font-weight: 700;
+}
+
+.service-request-housekeeping-status {
+  border-radius: 999px;
+  background: #edf1eb;
+  padding: 3px 8px;
+  color: #657267;
+  font-size: 9px;
+}
+
+.service-request-housekeeping-status.status-pending {
+  background: #f5efd7;
+  color: #7a5b27;
+}
+
+.service-request-housekeeping-status.status-in-progress {
+  background: #f8e7d8;
+  color: #8f4f24;
+}
+
+.service-request-housekeeping-status.status-completed {
+  background: #e2f0e4;
+  color: #27603a;
+}
+
+.service-request-housekeeping-progress p {
+  flex-basis: 100%;
+  margin: 0;
+  color: #52645a;
+}
+
+.service-request-task-assignment {
+  margin-top: 13px;
+  border-top: 1px solid #e8eee9;
+  padding-top: 11px;
+}
+
+.service-request-task-heading {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #344b3d;
+  font-size: 11px;
+}
+
+.service-request-task-buttons,
+.service-request-assignment-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 9px;
+}
+
+.service-request-task-buttons button {
+  min-height: 34px;
+  border: 1px solid #1f573f;
+  background: #1f573f;
+  padding: 0 11px;
+  color: white;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.service-request-task-buttons button:last-child {
+  border-color: #cbd9ce;
+  background: white;
+  color: #1f573f;
+}
+
+.service-request-task-buttons button:disabled {
+  opacity: .55;
+  cursor: wait;
+}
+
+.service-request-assignment-form {
+  display: grid;
+  grid-template-columns: minmax(180px,.7fr) minmax(220px,1.3fr);
+  gap: 10px;
+  margin-top: 11px;
+  border: 1px solid #e2e9e3;
+  background: #f8faf8;
+  padding: 12px;
+}
+
+.service-request-assignment-form .guest-field textarea {
+  min-height: 56px;
+}
+
+.service-request-assignment-actions {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+
+.service-request-no-staff {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: #a54b3e;
+  font-size: 10px;
+}
+
+@media (max-width: 760px) {
+  .receptionist-request-layout > aside {
+    display: none;
+  }
+
+  .receptionist-request-layout > main {
+    width: 100%;
+    padding: 18px 14px 90px;
+  }
+
+  .receptionist-request-mobile-nav {
+    position: fixed;
+    z-index: 40;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid #e4eae5;
+    background: rgba(255,255,255,.97);
+    padding: 8px 8px calc(8px + env(safe-area-inset-bottom));
+    backdrop-filter: blur(12px);
+  }
+
+  .receptionist-request-mobile-nav a {
+    display: grid;
+    justify-items: center;
+    gap: 3px;
+    color: #718078;
+    font-size: 10px;
+    text-decoration: none;
+  }
+
+  .receptionist-request-mobile-nav a[aria-current="page"] {
+    color: #174a3b;
+    font-weight: 700;
+  }
+
+  .service-request-assignment-form {
+    grid-template-columns: 1fr;
+  }
+
+  .service-request-assignment-actions,
+  .service-request-no-staff {
+    grid-column: auto;
+  }
+}

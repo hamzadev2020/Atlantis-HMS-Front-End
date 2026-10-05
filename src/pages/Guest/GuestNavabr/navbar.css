@@ -1,0 +1,372 @@
+.landing-navbar {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+
+
+z-index: 1000;
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+padding: 20px 32px;
+
+transition:
+    background 0.25s ease,
+    padding 0.25s ease,
+    box-shadow 0.25s ease;
+
+
+}
+
+/* =========================
+SCROLLED NAVBAR
+========================= */
+
+.landing-navbar.navbar-scrolled {
+background: #FAF6EF;
+
+
+padding: 12px 32px;
+
+box-shadow: 0 1px 0 rgba(36, 31, 25, 0.12);
+
+
+}
+
+/* =========================
+BRAND
+========================= */
+
+.landing-brand {
+display: flex;
+align-items: center;
+
+
+gap: 10px;
+
+text-decoration: none;
+
+
+}
+
+/* Logo Circle */
+
+.landing-brand-mark {
+width: 34px;
+height: 34px;
+
+
+border-radius: 50%;
+
+background: #1F5C57;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+color: #C9A24B;
+
+font-family: "Fraunces", Georgia, serif;
+
+font-size: 18px;
+
+
+}
+
+/* Atlantis Text */
+
+.landing-brand-name {
+font-family: "Fraunces", Georgia, serif;
+
+
+font-size: 19px;
+
+color: #FAF6EF;
+
+transition: color 0.25s ease;
+
+
+}
+
+/* When Scrolled */
+
+.navbar-scrolled .landing-brand-name {
+color: #241F19;
+}
+
+/* =========================
+NAVIGATION LINKS
+========================= */
+
+.landing-nav-links {
+display: flex;
+align-items: center;
+
+
+gap: 30px;
+
+
+}
+
+/* Normal Links */
+
+.landing-nav-links > a {
+color: #FAF6EF;
+
+
+text-decoration: none;
+
+font-size: 14.5px;
+
+transition: color 0.25s ease;
+
+
+}
+
+/* Scrolled Links */
+
+.navbar-scrolled .landing-nav-links > a {
+color: #241F19;
+}
+
+/* Hover */
+
+.landing-nav-links > a:hover {
+color: #C9A24B;
+}
+
+/* =========================
+USER SECTION
+========================= */
+
+.landing-user-section {
+display: flex;
+align-items: center;
+
+
+gap: 12px;
+
+
+}
+
+/* User Name */
+
+.landing-user-name {
+color: #FAF6EF;
+
+
+font-size: 14px;
+
+white-space: nowrap;
+
+transition: color 0.25s ease;
+
+
+}
+
+/* Scrolled User */
+
+.navbar-scrolled .landing-user-name {
+color: #241F19;
+}
+
+/* =========================
+LOGIN
+========================= */
+
+.landing-login-btn {
+color: #FAF6EF;
+
+
+text-decoration: none;
+
+font-size: 14.5px;
+
+transition: color 0.25s ease;
+
+
+}
+
+.navbar-scrolled .landing-login-btn {
+color: #241F19;
+}
+
+.landing-login-btn:hover {
+color: #C9A24B;
+}
+
+/* =========================
+LOGOUT
+========================= */
+
+.landing-logout-btn {
+border: 1px solid rgba(255, 255, 255, 0.5);
+
+
+background: transparent;
+
+color: #FAF6EF;
+
+padding: 8px 14px;
+
+border-radius: 3px;
+
+cursor: pointer;
+
+font-size: 13.5px;
+
+transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+
+}
+
+/* Scrolled Logout */
+
+.navbar-scrolled .landing-logout-btn {
+color: #241F19;
+
+
+border-color: rgba(36, 31, 25, 0.15);
+
+
+}
+
+/* Logout Hover */
+
+.landing-logout-btn:hover {
+background: #A85C32;
+
+
+border-color: #A85C32;
+
+color: #fff;
+
+
+}
+
+/* =========================
+BOOK NOW
+========================= */
+
+.landing-book-btn {
+background: #A85C32;
+
+
+color: #fff;
+
+border: none;
+
+padding: 10px 20px;
+
+border-radius: 3px;
+
+font-size: 14px;
+
+cursor: pointer;
+
+opacity: 0;
+
+pointer-events: none;
+
+transition:
+    opacity 0.25s ease,
+    background 0.2s ease;
+
+
+}
+
+/* Show after scroll */
+
+.navbar-scrolled .landing-book-btn {
+opacity: 1;
+
+
+pointer-events: auto;
+
+
+}
+
+.landing-book-btn:hover {
+background: #8F4B29;
+}
+
+/* =========================
+TABLET
+========================= */
+
+@media (max-width: 1024px) {
+
+
+.landing-navbar {
+    padding: 18px 24px;
+}
+
+.landing-navbar.navbar-scrolled {
+    padding: 12px 24px;
+}
+
+.landing-nav-links {
+    gap: 18px;
+}
+
+
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width: 680px) {
+
+
+.landing-navbar,
+.landing-navbar.navbar-scrolled {
+    padding: 14px 18px;
+}
+
+.landing-nav-links {
+    display: none;
+}
+
+.landing-brand-mark {
+    width: 31px;
+    height: 31px;
+}
+
+.landing-brand-name {
+    font-size: 18px;
+}
+
+.landing-book-btn {
+    display: none;
+}
+
+
+
+}
+
+/* =========================
+SMALL MOBILE
+========================= */
+
+@media (max-width: 390px) {
+
+
+.landing-brand-name {
+    font-size: 17px;
+}
+
+.landing-brand-mark {
+    width: 29px;
+    height: 29px;
+    font-size: 16px;
+}
+
+
+}

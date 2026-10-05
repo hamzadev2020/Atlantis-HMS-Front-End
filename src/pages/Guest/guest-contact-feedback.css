@@ -1,0 +1,41 @@
+.contact-feedback-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; margin-top: 20px; }
+.contact-feedback-single { grid-template-columns: minmax(0,1fr); }
+.contact-feedback-panel { min-width: 0; border: 1px solid #e2e9e3; background: white; padding: 20px; }
+.contact-feedback-heading { display: flex; align-items: center; gap: 11px; margin-bottom: 17px; }
+.contact-feedback-heading > span { display: grid; width: 38px; aspect-ratio: 1; place-items: center; background: #eaf1e9; color: #174a3b; }
+.feedback-panel .contact-feedback-heading > span { background: #fff0e8; color: #a64f36; }
+.contact-feedback-heading h2 { margin: 0; color: #1c2c27; font-family: Georgia,serif; font-size: 21px; font-weight: 400; }
+.contact-feedback-heading p { margin: 4px 0 0; color: #718078; font-size: 10px; }
+.contact-feedback-form { display: grid; gap: 12px; }
+.contact-feedback-form > label { display: grid; gap: 5px; color: #43564a; font-size: 10px; font-weight: 700; }
+.contact-feedback-form > label span { color: #87938b; font-weight: 400; }
+.contact-feedback-form input,.contact-feedback-form select,.contact-feedback-form textarea { width: 100%; min-height: 38px; border: 1px solid #dce5de; border-radius: 0; background: #fbfcfb; padding: 8px 10px; color: #24362f; font: inherit; font-size: 11px; }
+.contact-feedback-form textarea { min-height: 100px; resize: vertical; }
+.contact-feedback-form input:focus,.contact-feedback-form select:focus,.contact-feedback-form textarea:focus { border-color: #648c71; outline: 0; box-shadow: 0 0 0 2px rgba(100,140,113,.12); }
+.contact-feedback-form > button { display: inline-flex; min-height: 40px; align-items: center; justify-content: center; gap: 9px; border: 0; background: #174a3b; color: white; cursor: pointer; font-size: 11px; font-weight: 800; }
+.contact-feedback-form > button:hover { background: #10372d; }
+.contact-feedback-form > button:disabled { cursor: wait; opacity: .6; }
+.feedback-panel .contact-feedback-form > button { background: #c56a4b; }
+.feedback-panel .contact-feedback-form > button:hover { background: #a95035; }
+.feedback-rating { margin: 0; padding: 0; border: 0; }
+.feedback-rating legend { margin-bottom: 7px; color: #43564a; font-size: 10px; font-weight: 700; }
+.feedback-rating > div { display: flex; gap: 5px; }
+.feedback-rating button { display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid #f0dfd5; background: #fffaf7; color: #d18132; cursor: pointer; }
+.feedback-rating button[aria-pressed="true"] { border-color: #edc379; background: #fff3d8; }
+.feedback-rating > span { display: block; margin-top: 4px; color: #718078; font-size: 9px; }
+.guest-alert.success { display: flex; align-items: center; gap: 8px; border-color: #4c8b64; background: #e9f5eb; color: #28583a; }
+.contact-feedback-history { display: grid; gap: 10px; }
+.contact-feedback-history-card { border: 1px solid #e2e9e3; background: white; padding: 15px; }
+.contact-feedback-history-top { display: flex; align-items: start; justify-content: space-between; gap: 12px; }
+.contact-feedback-kind { display: inline-flex; color: #53705e; font-size: 9px; font-weight: 800; letter-spacing: .7px; text-transform: uppercase; }
+.contact-feedback-kind.kind-feedback { color: #a64f36; }
+.contact-feedback-history-top h3 { margin: 5px 0 0; color: #1c2c27; font-family: Georgia,serif; font-size: 18px; font-weight: 400; }
+.contact-feedback-status { flex: 0 0 auto; background: #fff0d5; padding: 5px 8px; color: #79521a; font-size: 9px; font-weight: 800; }
+.contact-feedback-status.status-in-progress { background: #e7e4f8; color: #51467f; }
+.contact-feedback-status.status-responded { background: #e2edf9; color: #315c84; }
+.contact-feedback-status.status-closed { background: #dcefe2; color: #27613a; }
+.contact-feedback-history-card > p { margin: 11px 0; color: #52645a; font-size: 11px; line-height: 1.65; white-space: pre-wrap; }
+.contact-feedback-history-meta { display: flex; flex-wrap: wrap; gap: 6px 14px; color: #87938b; font-size: 9px; }
+.contact-feedback-response { margin-top: 12px; border-left: 2px solid #8cb49a; background: #f4f8f4; padding: 10px 12px; color: #3c5b47; font-size: 10px; }
+.contact-feedback-response p { margin: 5px 0 0; color: #52645a; line-height: 1.6; white-space: pre-wrap; }
+@media (max-width: 760px) { .contact-feedback-grid { grid-template-columns: 1fr; } .contact-feedback-panel { padding: 15px; } }

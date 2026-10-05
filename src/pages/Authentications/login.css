@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap');
+
+/* Login page — uses the same palette + fonts as auth.css (deep green, cream, gold),
+   scoped with "lg-" so the shared auth.css (signup) is untouched. */
+
+.lg-page {
+  --deep: #14201B;
+  --deep-2: #1E3D2F;
+  --cream: #FBF7EE;
+  --gold: #B98D46;
+  --gold-soft: #E3C38A;
+  --ink: #1F2620;
+  --muted: #6B7568;
+  --line: #D8D0BE;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  min-height: 100vh;
+  font-family: 'Work Sans', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+/* ================= Left: beach slideshow ================= */
+.lg-aside {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 36px 44px 44px;
+  overflow: hidden;
+  color: var(--cream);
+  background: linear-gradient(135deg, var(--deep), var(--deep-2));
+}
+
+.lg-slides, .lg-overlay { position: absolute; inset: 0; z-index: -2; }
+.lg-overlay {
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(20, 32, 27, 0.6) 0%, rgba(20, 32, 27, 0.18) 40%, rgba(20, 32, 27, 0.9) 100%);
+}
+
+.lg-slide {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: lg-fade 18s infinite;
+  will-change: opacity, transform;
+}
+@keyframes lg-fade {
+  0%   { opacity: 0; transform: scale(1); }
+  6%   { opacity: 1; }
+  33%  { opacity: 1; }
+  39%  { opacity: 0; transform: scale(1.08); }
+  100% { opacity: 0; transform: scale(1.08); }
+}
+
+.lg-mark {
+  display: grid;
+  width: 78px;
+  height: 78px;
+  place-items: center;
+  align-self: flex-start;
+  overflow: hidden;
+  padding: 7px;
+  background: rgba(255,255,255,.94);
+  border: 1px solid rgba(255,255,255,.75);
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(8,16,12,.25);
+}
+.lg-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 13px;
+}
+
+.lg-copy {
+  max-width: 520px;
+  padding: 28px;
+  background: rgba(251, 247, 238, 0.1);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(251, 247, 238, 0.24);
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(8, 16, 12, 0.4);
+}
+.lg-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.lg-chips span {
+  padding: 5px 12px; font-size: 12px; font-weight: 500;
+  color: var(--cream);
+  background: rgba(251, 247, 238, 0.14);
+  border: 1px solid rgba(251, 247, 238, 0.26);
+  border-radius: 999px;
+}
+.lg-copy h1 {
+  margin: 0 0 12px;
+  font-family: 'Fraunces', serif;
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.lg-copy p { margin: 0 0 18px; font-size: 15px; line-height: 1.6; color: #D9E0DA; }
+.lg-foot { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-soft); }
+
+/* ================= Right: form ================= */
+.lg-main {
+  position: relative;
+  isolation: isolate;
+  display: flex; align-items: center; justify-content: center;
+  padding: 40px 24px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #FBF7EE 0%, #F5EFDF 55%, #EAF0E4 100%);
+}
+.lg-blob { position: absolute; z-index: -1; border-radius: 50%; filter: blur(70px); pointer-events: none; }
+.lg-blob-a { width: 320px; height: 320px; top: -90px; right: -80px; background: rgba(185, 141, 70, 0.28); }
+.lg-blob-b { width: 340px; height: 340px; bottom: -120px; left: -90px; background: rgba(30, 61, 47, 0.2); }
+
+.lg-form {
+  width: 100%;
+  max-width: 420px;
+  padding: 38px 34px;
+  background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(20, 32, 27, 0.12);
+}
+.lg-form h2 {
+  margin: 0 0 8px;
+  font-family: 'Fraunces', serif;
+  font-size: 30px; font-weight: 500; color: var(--ink);
+}
+.lg-profile-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 22px;
+}
+.lg-profile-photo {
+  position: relative;
+  display: grid;
+  width: 84px;
+  height: 84px;
+  place-items: center;
+  overflow: visible;
+  color: #829084;
+  background: #edf1e9;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--line), 0 6px 16px rgba(20, 32, 27, 0.12);
+  cursor: pointer;
+  transition: box-shadow .2s, transform .2s;
+}
+.lg-profile-photo:hover { transform: translateY(-1px); box-shadow: 0 0 0 2px var(--gold), 0 8px 20px rgba(20, 32, 27, 0.16); }
+.lg-profile-photo:focus-within { outline: 3px solid rgba(185, 141, 70, .45); outline-offset: 3px; }
+.lg-profile-photo input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+.lg-profile-photo > img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.lg-profile-camera {
+  position: absolute;
+  right: -2px;
+  bottom: 0;
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  color: white;
+  background: var(--deep-2);
+  border: 2px solid white;
+  border-radius: 50%;
+}
+.lg-profile-caption { display: grid; gap: 3px; color: var(--deep-2); font-size: 12px; font-weight: 600; text-align: center; }
+.lg-profile-caption small { color: var(--muted); font-size: 11px; font-weight: 400; }
+.lg-sub { margin: 0 0 28px; color: var(--muted); font-size: 14px; }
+
+.lg-error {
+  margin-bottom: 20px;
+  padding: 11px 14px;
+  font-size: 13.5px;
+  color: #A23E3E;
+  background: #F6E9E3;
+  border: 1px solid rgba(162, 62, 62, 0.22);
+  border-radius: 12px;
+}
+
+.lg-field { display: block; margin-bottom: 20px; }
+.lg-field > span { display: block; margin-bottom: 7px; font-size: 13px; font-weight: 500; color: #4A544C; }
+.lg-input { position: relative; }
+.lg-input svg {
+  position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+  color: #8C9486; pointer-events: none; transition: color 0.2s;
+}
+.lg-input input {
+  width: 100%; box-sizing: border-box;
+  height: 50px; padding: 0 14px 0 44px;
+  font-family: 'Work Sans', sans-serif; font-size: 15px; color: var(--ink);
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.lg-input input::placeholder { color: #A9AE9E; }
+.lg-input input:hover { border-color: #C4B99F; }
+.lg-input input:focus {
+  background: #fff;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px rgba(185, 141, 70, 0.2);
+}
+.lg-input:focus-within svg { color: var(--gold); }
+
+.lg-submit {
+  width: 100%; margin-top: 8px; padding: 14px;
+  font-family: 'Work Sans', sans-serif; font-size: 15px; font-weight: 500;
+  color: var(--cream);
+  cursor: pointer; border: 0; border-radius: 12px;
+  background: linear-gradient(135deg, var(--deep), var(--deep-2));
+  box-shadow: 0 12px 28px rgba(20, 32, 27, 0.28);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.25s, color 0.25s;
+}
+.lg-submit:hover {
+  transform: translateY(-2px);
+  color: var(--deep);
+  background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+  box-shadow: 0 16px 34px rgba(185, 141, 70, 0.4);
+}
+.lg-submit:active { transform: translateY(0); }
+.lg-submit:focus-visible { outline: 3px solid rgba(185, 141, 70, 0.55); outline-offset: 2px; }
+
+.lg-switch { margin: 26px 0 0; font-size: 14px; color: var(--muted); }
+.lg-switch a { color: var(--deep); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+.lg-switch a:hover { color: var(--gold); }
+
+/* ================= Responsive ================= */
+@media (max-width: 900px) {
+  .lg-page { grid-template-columns: 1fr; }
+  .lg-aside { min-height: 300px; padding: 24px 22px 28px; }
+  .lg-copy { padding: 20px; }
+  .lg-copy p, .lg-chips { display: none; }
+  .lg-copy h1 { margin-bottom: 8px; font-size: 26px; }
+  .lg-main { padding: 28px 16px 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lg-slide { animation: none; }
+  .lg-slide:first-child { opacity: 1; }
+}
