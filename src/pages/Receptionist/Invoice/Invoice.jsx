@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import "./Invoice.css";
-
+import "./invoice.css";
 const API_BASE = import.meta.env.VITE_API_URL;
 
 
