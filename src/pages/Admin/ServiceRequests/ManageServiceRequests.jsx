@@ -37,7 +37,7 @@ const ManageServiceRequests = () => {
     let active = true;
     const requestHeaders = { headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` } };
     const refreshRequests = () => {
-      axios.get(API_BASE, requestHeaders).then((res) => {
+      axios.get(`${API_BASE}/service-requests`, requestHeaders).then((res) => {
         if (active) {
           setRequests(res.data.serviceRequests || []);
           setError("");
@@ -91,7 +91,7 @@ const ManageServiceRequests = () => {
     e.preventDefault();
     setSaving(true);
     try {
-      const res = await axios.put(`${API_BASE}/${editingRequest._id}`, form, authHeaders);
+      const res = await axios.put(`${API_BASE}/service-requests/${editingRequest._id}`, form, authHeaders);
       setRequests((prev) =>
         prev.map((r) => (r._id === editingRequest._id ? res.data.serviceRequest : r))
       );
@@ -109,7 +109,7 @@ const ManageServiceRequests = () => {
   const handleDelete = async () => {
     setDeleting(true);
     try {
-      await axios.delete(`${API_BASE}/${deleteTarget._id}`, authHeaders);
+      await axios.delete(`${API_BASE}/service-requests/${deleteTarget._id}`, authHeaders);
       setRequests((prev) => prev.filter((r) => r._id !== deleteTarget._id));
       setDeleteTarget(null);
     } catch (err) {

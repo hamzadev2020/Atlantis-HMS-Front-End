@@ -29,10 +29,10 @@ export const ReceptionistAnalytics = () => {
         const headers = getAuthHeaders();
 
         const [roomsRes, bookingsRes, tasksRes, serviceRes] = await Promise.all([
-          axios.get(`${API_BASE}/api/ManageRooms`, headers),
-          axios.get(`${API_BASE}/api/ManageBookings`, headers),
-          axios.get(`${API_BASE}/api/housekeeping-tasks`, headers),
-          axios.get(`${API_BASE}/api/service-requests`, headers),
+          axios.get(`${API_BASE}/ManageRooms`, headers),
+          axios.get(`${API_BASE}/ManageBookings`, headers),
+          axios.get(`${API_BASE}/housekeeping-tasks`, headers),
+          axios.get(`${API_BASE}/service-requests`, headers),
         ]);
 
         if (!active) return;

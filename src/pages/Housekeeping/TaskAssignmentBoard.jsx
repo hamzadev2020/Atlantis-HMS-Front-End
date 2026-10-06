@@ -9,7 +9,7 @@ import "./task-board.css";
 
 const API_BASE = import.meta.env.VITE_API_URL;
 
-const API = `${API_BASE}/housekeeping-tasks`;
+const API = `${API_BASE}`;
 const authConfig = () => ({ headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` } });
 const statuses = ["pending", "in-progress", "completed"];
 const readable = (value = "") => value.replaceAll("-", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());

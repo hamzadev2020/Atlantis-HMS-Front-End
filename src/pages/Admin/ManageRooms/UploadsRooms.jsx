@@ -41,7 +41,7 @@ const UploadsRooms = () => {
     setGenerating(true);
     setError("");
     try {
-      const res = await axios.get(API_BASE, authHeaders);
+      const res = await axios.get(`${API_BASE}/ManageRooms`, authHeaders);
       const rooms = res.data.rooms || [];
 
       const numbers = rooms
@@ -84,7 +84,7 @@ const UploadsRooms = () => {
         isActive: form.isActive
       };
 
-      await axios.post(API_BASE, payload, authHeaders);
+      await axios.post(`${API_BASE}/ManageRooms`, payload, authHeaders);
       setSuccess("Room uploaded successfully");
 
       setForm({

@@ -39,7 +39,7 @@ const ManageRooms = () => {
     setLoading(true);
     setError("");
     try {
-      const res = await axios.get(API_BASE, authHeaders);
+      const res = await axios.get(`${API_BASE}/ManageRooms`, authHeaders);
       setRooms(res.data.rooms || []);
     } catch (err) {
       setError(err?.response?.data?.message || "Failed to load rooms");

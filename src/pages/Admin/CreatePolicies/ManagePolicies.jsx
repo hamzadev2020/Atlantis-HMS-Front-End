@@ -27,7 +27,7 @@ const ManagePolicies = () => {
     setLoading(true);
     setError("");
     try {
-      const res = await axios.get(API_BASE, authHeaders);
+      const res = await axios.get(`${API_BASE}/policies`, authHeaders);
       setPolicies(res.data.policies || []);
     } catch (err) {
       setError(err?.response?.data?.message || "Failed to load policies");
@@ -62,7 +62,7 @@ const ManagePolicies = () => {
     e.preventDefault();
     setSaving(true);
     try {
-      await axios.put(`${API_BASE}/${editingPolicy._id}`, form, authHeaders);
+      await axios.put(`${API_BASE}/policies/${editingPolicy._id}`, form, authHeaders);
       setPolicies((prev) =>
         prev.map((p) => (p._id === editingPolicy._id ? { ...p, ...form } : p))
       );
@@ -80,7 +80,7 @@ const ManagePolicies = () => {
   const handleDelete = async () => {
     setDeleting(true);
     try {
-      await axios.delete(`${API_BASE}/${deleteTarget._id}`, authHeaders);
+      await axios.delete(`${API_BASE}/policies/${deleteTarget._id}`, authHeaders);
       setPolicies((prev) => prev.filter((p) => p._id !== deleteTarget._id));
       setDeleteTarget(null);
     } catch (err) {

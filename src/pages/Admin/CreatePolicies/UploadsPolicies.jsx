@@ -32,7 +32,7 @@ const UploadsPolicies = () => {
     setSubmitting(true);
 
     try {
-      await axios.post(API_BASE, form, authHeaders);
+      await axios.post(`${API_BASE}/policies`, form, authHeaders);
       setSuccess("Policy uploaded successfully");
       setForm({ type: "privacy", Heading: "", Descriptions: "" });
     } catch (err) {

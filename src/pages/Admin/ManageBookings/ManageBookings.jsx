@@ -37,7 +37,7 @@ const ViewBookings = () => {
     setLoading(true);
     setError("");
     try {
-      const res = await axios.get(API_BASE, authHeaders);
+      const res = await axios.get(`${API_BASE}/ManageBookings`, authHeaders);
       setBookings(res.data.bookings || []);
     } catch (err) {
       setError(err?.response?.data?.message || "Failed to load bookings");
@@ -97,7 +97,7 @@ const ViewBookings = () => {
         actualCheckIn: form.actualCheckIn || null,
         actualCheckOut: form.actualCheckOut || null
       };
-      const res = await axios.put(`${API_BASE}/${editingBooking._id}`, payload, authHeaders);
+      const res = await axios.put(`${API_BASE}/ManageBookings/${editingBooking._id}`, payload, authHeaders);
       setBookings((prev) =>
         prev.map((b) => (b._id === editingBooking._id ? res.data.booking : b))
       );
@@ -115,7 +115,7 @@ const ViewBookings = () => {
   const handleDelete = async () => {
     setDeleting(true);
     try {
-      await axios.delete(`${API_BASE}/${deleteTarget._id}`, authHeaders);
+      await axios.delete(`${API_BASE}/ManageBookings/${deleteTarget._id}`, authHeaders);
       setBookings((prev) => prev.filter((b) => b._id !== deleteTarget._id));
       setDeleteTarget(null);
     } catch (err) {
@@ -154,7 +154,7 @@ const ViewBookings = () => {
 
     try {
       const res = await axios.put(
-        `${API_BASE}/${bookingId}/check-in`,
+        `${API_BASE}/ManageBookings/${bookingId}/check-in`,
         {},
         authHeaders
       );
@@ -184,7 +184,7 @@ const ViewBookings = () => {
 
     try {
       const res = await axios.put(
-        `${API_BASE}/${bookingId}/check-out`,
+        `${API_BASE}/ManageBookings/${bookingId}/check-out`,
         {},
         authHeaders
       );
