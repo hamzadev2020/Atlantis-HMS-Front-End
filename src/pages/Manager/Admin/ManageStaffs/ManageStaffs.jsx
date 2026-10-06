@@ -25,12 +25,12 @@ const ManageStaffs = () => {
     setLoading(true);
     setError("");
     try {
-      const res = await axios.get(`${API_BASE}/user/staffs`, authHeaders);
+      const res = await axios.get(API_BASE, authHeaders);
       setStaffs(res.data.staffs || []);
     } catch (err) {
       setError(err?.response?.data?.message || "Failed to load staff");
     } finally {
-      setLoading(false);staffs
+      setLoading(false);
     }
   };
 
