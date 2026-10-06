@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Navbar } from "../../../Components/Admin/Navbar.jsx";
 import { Sidebar } from "../../../Components/Admin/Sidebar.jsx";
-const API_BASE = import.meta.env.VITE_API_URL;
+const API=import.meta.env.VITE_API_URL;
+const API_BASE = `${API}/user/staffs`;
 
 const ManageStaffs = () => {
   const [staffs, setStaffs] = useState([]);
