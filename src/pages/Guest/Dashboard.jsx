@@ -7,7 +7,7 @@ import "./guest-pages.css";
 const API_BASE = import.meta.env.VITE_API_URL;
 
 
-const API = `${API_BASE}/ManageBookings`;
+const API = `${API_BASE}`;
 const authConfig = () => ({ headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` } });
 
 const money = (value) => new Intl.NumberFormat("en-PK", {

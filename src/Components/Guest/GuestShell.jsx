@@ -25,6 +25,11 @@ const guestLinks = [
   { label: "My profile", to: "/my-profile", icon: UserRound },
 ];
 
+const API_BASE = import.meta.env.VITE_API_URL;
+
+
+const API = `${API_BASE}`;
+
 export const GuestShell = ({ children }) => {
   const [profile, setProfile] = useState(null);
   const [photoUploading, setPhotoUploading] = useState(false);
@@ -40,7 +45,7 @@ export const GuestShell = ({ children }) => {
     const token = sessionStorage.getItem("token");
     if (!token) return;
 
-    axios.get("http://localhost:5000/api/ManageProfile/viewprofile", {
+    axios.get(`${API}/ManageProfile/viewprofile`, {
       headers: { Authorization: `Bearer ${token}` },
     }).then((response) => setProfile(response.data)).catch(() => setProfile(null));
   }, []);
@@ -67,7 +72,7 @@ export const GuestShell = ({ children }) => {
     try {
       const profileImage = await uploadImage(file);
       const { data } = await axios.post(
-        "http://localhost:5000/api/ManageProfile/updateprofile",
+        `${API}/ManageProfile/updateprofile`,
         { profileImage },
         { headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` } }
       );

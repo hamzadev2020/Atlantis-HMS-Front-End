@@ -8,7 +8,7 @@ import { uploadImage } from "../../config/cloudinary.js";
 
 const API_BASE = import.meta.env.VITE_API_URL;
 
-const API = `${API_BASE}/ManageProfile`;
+const API = `${API_BASE}`;
 const authConfig = () => ({ headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` } });
 
 export const GuestProfile = () => {
