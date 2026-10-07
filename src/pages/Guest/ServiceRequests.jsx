@@ -6,7 +6,7 @@ import "./guest-pages.css";
 
 const API_BASE = import.meta.env.VITE_API_URL;
 
-const API = `${API_BASE}/service-requests`;
+const API = `${API_BASE}`;
 const authConfig = () => ({ headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` } });
 const serviceTypes = [
   ["room-service", "Room service"],
